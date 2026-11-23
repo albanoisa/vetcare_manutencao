@@ -30,7 +30,6 @@ include __DIR__.'/../includes/header.php';
 <tr><th>Nº</th><th>Título</th><th>Módulo</th><th>Prioridade</th><th>Status</th><th>Aberto em</th><th></th></tr>
 <?php if(!$rows):?><tr><td colspan="7" class="empty">Nenhum chamado encontrado. Abra o primeiro chamado da equipe.</td></tr><?php endif;?>
 <?php foreach($rows as $r):?><tr>
-<td>#<?=str_pad($r['id'],4,'0',STR_PAD_LEFT)?></td><td><?=htmlspecialchars($r['titulo'])?></td><td><?=htmlspecialchars($r['modulo'])?></td><td><span class="tag"><?=htmlspecialchars($r['prioridade'])?></span></td><td><span class="tag"><?=htmlspecialchars($r['status'])?></span></td><td><?=date('d/m/Y H:i',strtotime($r['criado_em']))?></td><td><a href="ver.php?id=<?=$r['id']?>">Detalhes</a></td>
-</tr><?php endforeach;?>
+<td><span class="tag"><?=htmlspecialchars($r['status'])?></span></td></tr><?php endforeach;?>
 </table></section>
 <?php include __DIR__.'/../includes/footer.php';?>

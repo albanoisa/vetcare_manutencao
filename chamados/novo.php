@@ -2,7 +2,7 @@
 require_once __DIR__.'/../config/database.php';require_once __DIR__.'/../config/auth.php';exigirLogin();
 $titulo='Abrir chamado';$erro='';
 if($_SERVER['REQUEST_METHOD']==='POST'){
- $campos=['titulo','modulo','solicitante','equipe','descricao','passos','resultado_esperado','resultado_obtido','severidade','prioridade'];
+$campos=['titulo','modulo','solicitante','equipe','descricao','passos','resultado_esperado','resultado_obtido','severidade','prioridade'];
  foreach($campos as $c){$$c=trim($_POST[$c]??'');}
  if($titulo===''||$solicitante===''||$descricao===''||$passos===''||$resultado_esperado===''||$resultado_obtido==='')$erro='Preencha todos os campos obrigatórios.';
  else{
